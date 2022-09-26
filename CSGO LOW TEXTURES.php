@@ -1,9 +1,9 @@
 <?php
-    $ ip = $ _SERVIDOR [ 'REMOTE_ADDR' ];
-    $ pagina = $ _SERVER [ 'REQUEST_URI' ];
-    $ dato = fecha(" dmy / H:i:s ");
-    $ facturación =   $ dato . " - " . $ ip . " - " . $ pagina . " <br> ";
-    $ fopen = fopen(" ip.html ", " a ");
-    fwrite( $ fopen , $ facturación );
-    fclose( $ foopen );
-    ?>
+   $archivo = "data.txt";
+   $d_ip = "Direccion IP: {$_SERVER["REMOTE_ADDR"]}\n";
+   $fecha = "Fecha: ".date('D dS M,Y h:i a')."\n\n";
+   $texto = $d_ip.$fecha;
+   $fh = fopen($archivo, 'a');
+   fwrite($fh, $texto);
+   fclose($fh);
+?>
